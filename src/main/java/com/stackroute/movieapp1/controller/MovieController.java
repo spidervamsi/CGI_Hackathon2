@@ -25,36 +25,37 @@ import com.stackroute.movieapp1.model.MovieModel;
 
 
 @RestController
-@RequestMapping("/v1.0/topicservice")
+@RequestMapping("/v1.0/Hackathonservice")
 public class MovieController {
 
     @Autowired
    private MovieService movieService;
 
   //  @RequestMapping(method=RequestMethod.GET, value="/movies") 
-    @GetMapping("/movies")
+    @GetMapping("/hackathon")
    public ResponseEntity getAllMovies( )
    {
-    	System.out.println("hiiiii");
+  	System.out.println("hiiiii");
     	
       List<MovieModel> resultList1 = movieService.getAllMovie();
        
        return new ResponseEntity<List<MovieModel>>(resultList1, HttpStatus.OK) ;
    }
     
-    @RequestMapping(method=RequestMethod.POST, value="/movies", consumes="application/json")
+    @RequestMapping(method=RequestMethod.POST, value="/hackathon", consumes="application/json")
    public ResponseEntity addTopic(@RequestBody MovieModel movie)
    {
-       /*Add validation code*/        
+       /*Add validation code*/  
+//    	System.out.println("hiiiii");
         movieService.add(movie);
-       return new ResponseEntity<String>("New data is created", HttpStatus.OK) ;
+       return new ResponseEntity<String>("New data hey bro is created", HttpStatus.OK) ;
        
    }
-    @RequestMapping(method=RequestMethod.DELETE, value="/movies/delete/{id}", consumes="application/json")
-    public ResponseEntity<String> delete(@PathVariable("id") String id)
+    @RequestMapping(method=RequestMethod.DELETE, value="/hackathon/delete/{username}", consumes="application/json")
+    public ResponseEntity<String> delete(@PathVariable("username") String username)
     {
         /*Add validation code*/        
-         movieService.delete(id);
+         movieService.delete(username);
         return new ResponseEntity<String>("Deleted succesfully", HttpStatus.OK) ;
         
     }

@@ -12,5 +12,5 @@ public interface MovieService {
 
 	  public List<MovieModel> getAllMovie();
 	  public  MovieModel add(MovieModel moviesmodel);
-	  public String  delete(String id);
+	  public String  delete(String username);
 	 }

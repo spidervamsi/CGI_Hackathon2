@@ -26,9 +26,9 @@ public class dbMovieService implements MovieService{
 	   }
 	    
 	    @Override
-	   public String delete(String id)
+	   public String delete(String username)
 	   {
-		   movieRdmsrepo.delete(id);
+		   movieRdmsrepo.delete(username);
 		   return null;
 	   }
 	    
